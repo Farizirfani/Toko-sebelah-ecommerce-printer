@@ -22,36 +22,52 @@
     </div>
     <div class="row justify-content-around">
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
-
+            </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
+            </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
+            </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
+            </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
+            </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
+                <img class="mx-auto d-block" style="max-width: 150px" src="https://www.shutterstock.com/image-vector/realistic-inkjet-printer-vector-design-260nw-1706149966.jpg" alt="Foto Profil">                
+            <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
             <a href="http://" class="btn btn-primary">beli</a>
+            </div>
         </div>
-    </div>
 </div>
 @endsection

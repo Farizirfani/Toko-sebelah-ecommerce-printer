@@ -5,7 +5,7 @@
 {{-- content --}}
 @section('content-admin')
     <div class="container">
-        <div class="card shadow-md">
+        <div class="card-1">
             <h1>ini create</h1>
         </div>
     </div>

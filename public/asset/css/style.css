@@ -5,29 +5,45 @@
 
 :root{
     /* color */
-    --color-1: #0124de;
+    --color-1: #1B2326;
+    --color-2: #3A4F52;
+    --color-3: #10F5CC;
+    --color-4: #F5FEFD;
+    --color-5: #2e1792;
 
     /* gradient */
     --gradient-1: linear-gradient(to right, #00c6ff, #0072ff);
     --gradient-2: linear-gradient(to right, #005ebd, #021b79);
     --gradient-3: linear-gradient(to right, #000428, #004e92);
+    --gradient-4: linear-gradient(to right, #2e1792, #1E0E5E);
 }
 
 .color-1{
     color: var(--color-1);
 }
+.color-2{
+    color: var(--color-2);
+}
+.color-3{
+    color: var(--color-3);
+}
+.color-4{
+    color: var(--color-4);
+}
+.color-5{
+    color: var(--color-5);
+}
 
-.primary{
-    color: var(--color-1);
+.bg-1{
+    background-color: linear-gradient(to right, #2e1792, #1f0e5f);
 }
 
 .nav-main{
-    background-color: var(--gradient-2);
-    color: #00c6ff;
+
 }
 
 .jumbotron {
-    background: var(--gradient-2);
+    background: var(--gradient-4);
     padding: 2rem;
     color: white;
     margin-bottom: 2rem;

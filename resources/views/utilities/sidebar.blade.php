@@ -19,11 +19,21 @@
         box-sizing: border-box;
         font-family: 'Poppins', sans-serif;
     }
+
+    
+    .card-1{
+        margin-right: 0px;
+        margin-left: 0px;
+        box-shadow: rgba(149, 157, 165, 0.116) 0px 8px 24px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
     .sidebar{
         position: fixed;
         height: 100%;
         width: 240px;
-        background: linear-gradient(to bottom, #141e30, #243b55);
+        background: #1B2326;
         transition: all 0.5s ease;
     }
     .sidebar.active{
@@ -56,12 +66,15 @@
         transition: all 0.4s ease;
     }
     .sidebar .nav-links li a.active{
-        background: #001e8a;
+        background: #10F5CC;
         border-top-left-radius: 25px;
         border-end-start-radius: 25px;
     }
     .sidebar .nav-links li a:hover{
-        background: #001e8a;
+        background: #10F5CC;
+
+        border-top-left-radius: 25px;
+        border-end-start-radius: 25px;
     }
     .sidebar .nav-links li i{
         min-width: 60px;
@@ -96,7 +109,7 @@
         display: flex;
         justify-content: space-between;
         height: 80px;
-        background: #fff;
+        background: linear-gradient(to right, #1b2326, #363636);
         display: flex;
         align-items: center;
         position: fixed;
@@ -156,7 +169,7 @@
     .home-section nav .profile-details{
         display: flex;
         align-items: center;
-        background: #F5F6FA;
+        background: red;
         border: 2px solid #EFEEF1;
         border-radius: 6px;
         height: 50px;
@@ -192,260 +205,7 @@
     padding: 0 20px;
     margin-bottom: 26px;
     }
-    .overview-boxes .box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% / 4 - 15px);
-    background: #fff;
-    padding: 15px 14px;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    .overview-boxes .box-topic{
-    font-size: 20px;
-    font-weight: 500;
-    }
-    .home-content .box .number{
-    display: inline-block;
-    font-size: 35px;
-    margin-top: -6px;
-    font-weight: 500;
-    }
-    .home-content .box .indicator{
-    display: flex;
-    align-items: center;
-    }
-    .home-content .box .indicator i{
-    height: 20px;
-    width: 20px;
-    background: #8FDACB;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    margin-right: 5px;
-    }
-    .box .indicator i.down{
-    background: #e87d88;
-    }
-    .home-content .box .indicator .text{
-    font-size: 12px;
-    }
-    .home-content .box .cart{
-    display: inline-block;
-    font-size: 32px;
-    height: 50px;
-    width: 50px;
-    background: #cce5ff;
-    line-height: 50px;
-    text-align: center;
-    color: #66b0ff;
-    border-radius: 12px;
-    margin: -15px 0 0 6px;
-    }
-    .home-content .box .cart.two{
-    color: #2BD47D;
-    background: #C0F2D8;
-    }
-    .home-content .box .cart.three{
-    color: #ffc233;
-    background: #ffe8b3;
-    }
-    .home-content .box .cart.four{
-    color: #e05260;
-    background: #f7d4d7;
-    }
-    .home-content .total-order{
-    font-size: 20px;
-    font-weight: 500;
-    }
-    .home-content .sales-boxes{
-    display: flex;
-    justify-content: space-between;
-    /* padding: 0 20px; */
-    }
-
-    /* left box */
-    .home-content .sales-boxes .recent-sales{
-    width: 65%;
-    background: #fff;
-    padding: 20px 30px;
-    margin: 0 20px;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    .home-content .sales-boxes .sales-details{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    }
-    .sales-boxes .box .title{
-    font-size: 24px;
-    font-weight: 500;
-    /* margin-bottom: 10px; */
-    }
-    .sales-boxes .sales-details li.topic{
-    font-size: 20px;
-    font-weight: 500;
-    }
-    .sales-boxes .sales-details li{
-    list-style: none;
-    margin: 8px 0;
-    }
-    .sales-boxes .sales-details li a{
-    font-size: 18px;
-    color: #333;
-    font-size: 400;
-    text-decoration: none;
-    }
-    .sales-boxes .box .button{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    }
-    .sales-boxes .box .button a{
-    color: #fff;
-    background: #0A2558;
-    padding: 4px 12px;
-    font-size: 15px;
-    font-weight: 400;
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    }
-    .sales-boxes .box .button a:hover{
-    background:  #0d3073;
-    }
-
-    /* Right box */
-    .home-content .sales-boxes .top-sales{
-    width: 35%;
-    background: #fff;
-    padding: 20px 30px;
-    margin: 0 20px 0 0;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    .sales-boxes .top-sales li{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
-    }
-    .sales-boxes .top-sales li a img{
-    height: 40px;
-    width: 40px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-right: 10px;
-    background: #333;
-    }
-    .sales-boxes .top-sales li a{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    }
-    .sales-boxes .top-sales li .product,
-    .price{
-    font-size: 17px;
-    font-weight: 400;
-    color: #333;
-    }
-    /* Responsive Media Query */
-    @media (max-width: 1240px) {
-    .sidebar{
-        width: 60px;
-    }
-    .sidebar.active{
-        width: 220px;
-    }
-    .home-section{
-        width: calc(100% - 60px);
-        left: 60px;
-    }
-    .sidebar.active ~ .home-section{
-        /* width: calc(100% - 220px); */
-        overflow: hidden;
-        left: 220px;
-    }
-    .home-section nav{
-        width: calc(100% - 60px);
-        left: 60px;
-    }
-    .sidebar.active ~ .home-section nav{
-        width: calc(100% - 220px);
-        left: 220px;
-    }
-    }
-    @media (max-width: 1150px) {
-    .home-content .sales-boxes{
-        flex-direction: column;
-    }
-    .home-content .sales-boxes .box{
-        width: 100%;
-        overflow-x: scroll;
-        margin-bottom: 30px;
-    }
-    .home-content .sales-boxes .top-sales{
-        margin: 0;
-    }
-    }
-    @media (max-width: 1000px) {
-    .overview-boxes .box{
-        width: calc(100% / 2 - 15px);
-        margin-bottom: 15px;
-    }
-    }
-    @media (max-width: 700px) {
-    nav .sidebar-button .dashboard,
-    nav .profile-details .admin_name,
-    nav .profile-details i{
-        display: none;
-    }
-    .home-section nav .profile-details{
-        height: 50px;
-        min-width: 40px;
-    }
-    .home-content .sales-boxes .sales-details{
-        width: 560px;
-    }
-    }
-    @media (max-width: 550px) {
-    .overview-boxes .box{
-        width: 100%;
-        margin-bottom: 15px;
-    }
-    .sidebar.active ~ .home-section nav .profile-details{
-        display: none;
-    }
-    }
-    @media (max-width: 400px) {
-    .sidebar{
-        width: 0;
-    }
-    .sidebar.active{
-        width: 60px;
-    }
-    .home-section{
-        width: 100%;
-        left: 0;
-    }
-    .sidebar.active ~ .home-section{
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-    .home-section nav{
-        width: 100%;
-        left: 0;
-    }
-    .sidebar.active ~ .home-section nav{
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-    }
-        </style>
+    </style>
     <div class="sidebar">
         <div class="logo-details">
         <span class="logo_name" style="margin-left: 25%">Admin</span>
@@ -474,7 +234,7 @@
     <section class="home-section">
         <nav>
         <div class="sidebar-button">
-            <span class="dashboard" style="margin-left: 30px">Dashboard</span>
+            <span class="dashboard" style="margin-left: 30px; color: #ffff;">Dashboard</span>
         </div>
         <div class="search-box">
             <input type="text" placeholder="Search...">

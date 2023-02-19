@@ -1,10 +1,10 @@
 {{-- link css --}}
 <link rel="stylesheet" href="{{ asset('asset/css/style.css') }}">
 
-        <nav class="navbar navbar-expand-md nav-main shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm  bg-1" style="background-color: #2e1792">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <h4 class="nav-item "> Toko Sebelah </h4>
+                    <h3 class="nav-item color-4" style="font-weight: 800"> Toko Sebelah </h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -16,12 +16,24 @@
 
                     </ul>
 
+                    <ul class="navbar-nav justify-content-center">
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
+                            Home
+                        </a>
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
+                            Order
+                        </a>
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
+                            about
+                        </a>
+                    </ul>
+
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto color-4">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
-                                <li class="nav-item">
+                                <li class="nav-item color-4">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
@@ -32,8 +44,8 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item dropdown color-4">
+                                <a id="navbarDropdown" style="text-decoration: none; font-weight: 300" class="color-4 dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
