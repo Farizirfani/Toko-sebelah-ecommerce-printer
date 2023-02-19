@@ -6,5 +6,7 @@
 
 {{-- content --}}
 @section('content-admin')
-
+    <div>
+        <h1>test</h1>
+    </div>
 @endsection
