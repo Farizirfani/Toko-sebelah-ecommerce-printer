@@ -5,11 +5,13 @@
         <link rel="stylesheet" href="style.css">
         <!-- Boxicons CDN Link -->
         <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+        {{-- <link rel="stylesheet" href="{{ asset('asset/css/sidebar.css') }}"> --}}
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     </head>
     <body>
-        <style>
-            /* Googlefont Poppins CDN Link */
+<style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
     *{
         margin: 0;
@@ -450,13 +452,13 @@
         </div>
         <ul class="nav-links">
             <li>
-            <a href="#" class="active">
+            <a href="{{ route('admin.index') }}" class="active">
                 <i class='bx bx-grid-alt' ></i>
                 <span class="links_name">Dashboard</span>
             </a>
             </li>
             <li>
-            <a href="#">
+            <a href="{{ url('/admin/create') }}">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Product</span>
             </a>
@@ -480,10 +482,24 @@
         </div>
         </nav>
         <main>
-            @yield('content-admin')
+            <div class="home-content">
+                @yield('content-admin')
+            </div>
         </main>
     </section>
 
+
+      <script>
+    let sidebar = document.querySelector(".sidebar");
+    let sidebarBtn = document.querySelector(".sidebarBtn");
+    sidebarBtn.onclick = function() {
+    sidebar.classList.toggle("active");
+    if(sidebar.classList.contains("active")){
+    sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+    }else
+    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+    }
+    </script>
     </body>
     </html>
 
