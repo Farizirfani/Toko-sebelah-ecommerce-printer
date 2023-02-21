@@ -196,6 +196,8 @@
     .home-section .home-content{
     position: relative;
     padding-top: 104px;
+    z-index: 10;
+    border-radius: 25px;
     }
     .home-content .overview-boxes{
     display: flex;
@@ -212,7 +214,7 @@
         </div>
         <ul class="nav-links">
             <li>
-            <a href="{{ route('admin.index') }}" class="active">
+            <a href="{{ route('admin.index') }}">
                 <i class='bx bx-grid-alt' ></i>
                 <span class="links_name">Dashboard</span>
             </a>

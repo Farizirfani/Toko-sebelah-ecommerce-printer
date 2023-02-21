@@ -3,7 +3,7 @@
 
         <nav class="navbar navbar-expand-md shadow-sm  bg-1" style="background-color: #2e1792">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ url('/home') }}">
                     <h3 class="nav-item color-4" style="font-weight: 800"> Toko Sebelah </h3>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -17,7 +17,7 @@
                     </ul>
 
                     <ul class="navbar-nav justify-content-center">
-                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="{{ url('/home') }}">
                             Home
                         </a>
                         <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
@@ -26,6 +26,11 @@
                         <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
                             about
                         </a>
+                        @if (Auth()->user()->role == 'admin')
+                            <a style="text-decoration: none; font-weight: 200; background-color: #160749; border-radius: 25px; " class="color-4 px-3 py-1 mx-2" href="{{ url('/admin') }}">
+                                Dashboard Admin
+                            </a>
+                        @endif
                     </ul>
 
                     <!-- Right Side Of Navbar -->

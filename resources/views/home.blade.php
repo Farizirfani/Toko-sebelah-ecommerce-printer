@@ -42,7 +42,7 @@
             <div class="my-4 mx-2">
             <h1>ini printer</h1>
             <p>test</p>
-            <a href="http://" class="btn btn-primary">beli</a>
+            <a href="http://" class="btn btn-primary"><i class=""></i></a>
             </div>
         </div>
         <div class="card-1 p-3 m-3" style="width: 30%;">
