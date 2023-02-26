@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\admin;
 use App\Models\product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-use function GuzzleHttp\Promise\all;
-
-class AdminController extends Controller
+class productController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -47,15 +44,16 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(admin $admin)
+    public function show($id)
     {
-        //
+        $show_product = product::find($id);
+        return view('user.show', compact('show_product'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(admin $admin)
+    public function edit(string $id)
     {
         //
     }
@@ -63,7 +61,7 @@ class AdminController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, admin $admin)
+    public function update(Request $request, string $id)
     {
         //
     }

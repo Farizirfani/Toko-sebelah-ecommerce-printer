@@ -238,6 +238,9 @@
         <div class="sidebar-button">
             <span class="dashboard" style="margin-left: 30px; color: #ffff;">Dashboard</span>
         </div>
+        <div class="bg-btn-1">
+            <a href="{{ url('/home') }}" class="btn btn-outline-light rounded-4">back to home</a>
+        </div>
         <div class="search-box">
             <input type="text" placeholder="Search...">
             <i class='bx bx-search' ></i>
