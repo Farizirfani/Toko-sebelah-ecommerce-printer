@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
+use App\Models\product;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -14,7 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $data_product = product::all();
+        return view('admin.index', compact('data_product'));
     }
 
     /**
@@ -30,7 +32,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -60,8 +62,9 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(admin $admin)
+    public function destroy($id)
     {
-        //
+        product::destroy($id);
+        return redirect()->route('admin.index');
     }
 }
