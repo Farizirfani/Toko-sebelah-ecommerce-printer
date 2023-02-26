@@ -6,12 +6,16 @@
 @section('content-admin')
     <div class="container">
         <div class="card-1 m-4 p-4">
-            <form method="POST" action="{{ url('admin') }}">
+            <form method="POST" action="{{ url('admin') }}" enctype="multipart/form-data">
                 @csrf
                 @method("POST")
                 <div class="mb-3">
                     <label class="form-label">Nama Product</label>
                     <input type="text" name="nama_product" class="form-control" >
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tambah Foto</label>
+                    <input type="file" name="image" class="form-control" >
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Spesifikasi Product</label>

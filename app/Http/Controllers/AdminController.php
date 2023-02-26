@@ -34,14 +34,29 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        $input =  $request->all();
-        $store_product = product::create($input);
+        // $input = $request->all();
+        // $store_product = product::create($input);
 
-        if($store_product->save()){
-            return redirect()->route('admin.index');
-        }else{
-            return redirect()->back();
+        // if($request->hasFile('image')){
+        //     $request->file('image')->store('public/image/', $request->file('image')->getClientOriginalName());
+        //     $store_product->image = $request->file('image')->getClientOriginalName();
+        //     $store_product->save();
+        // }
+
+        // if($store_product->save()){
+        //     return redirect()->route('admin.index');
+        // }else{
+        //     return redirect()->back();
+        // }
+
+        $store_product = product::create($request->all());
+        if($request->hasFile('image')){
+            $request->file('image')->move('image/', $request->file('image')->getClientOriginalName());
+            $store_product->image = $request->file('image')->getClientOriginalName();
+            $store_product->save();
         }
+
+        return redirect()->route('admin.index');
     }
 
     /**
