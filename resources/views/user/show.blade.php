@@ -16,6 +16,25 @@
                     <h3>Spesifikasi : {{ $show_product->spesifikasi }}</h3>
                     <h3>Harga : Rp. {{ $show_product->harga }}</h3>
                     <h3>kuantitas : {{ $show_product->kuantitas }}</h3>
+                    {{-- form --}}
+
+                    <form action="{{ route('order.store') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $show_product->id }}">
+                    <input type="hidden" name="harga" value="{{ $show_product->harga }}">
+                    <tr>
+                        <td>Jumlah Pesanan</td>
+                        <td>:</td>
+                        <div class="input-group text-center mb-3" style="width: 180px">
+                            <input type="number" min="1" name="jumlah_order" class="form-control qty-input text-center">
+                        </div>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button type="submit" class="mt-2 btn btn-primary">Order</button>
+                        </td>
+                    </tr>
+                    </form>
                 </div>
             </div>
             

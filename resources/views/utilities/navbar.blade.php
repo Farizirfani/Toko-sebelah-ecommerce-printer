@@ -20,7 +20,7 @@
                         <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="{{ url('/home') }}">
                             Home
                         </a>
-                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="{{ url('/order') }}">
                             Order
                         </a>
                         <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
