@@ -35,6 +35,8 @@ class OrderController extends Controller
 
         $product = Product::find($request->input('product_id'));
         $recentQty = $product->kuantitas - $request->input('jumlah_order');
+        $harga = $product->harga;
+
         if ($recentQty < 0) {
             return redirect()->back()->with('error', 'Maaf Stok tidak mencukupi');
         }
@@ -45,9 +47,9 @@ class OrderController extends Controller
         $order->product_id = $request->input('product_id');
         $order->user_id = Auth::user()->id;
         $order->jumlah_order = $request->input('jumlah_order');
-        $order->harga = $request->input('harga');
+        $order->harga = $harga;
         $order->status = '0';
-        $order->total = ($request->harga * $request->jumlah_order);
+        $order->total = $harga * $request->jumlah_order;
 
         $order->save();
 

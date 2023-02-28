@@ -28,7 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // route admin
 Route::resource('/admin', AdminController::class)->middleware('admin');
-Route::get('/admin/order', [AdminController::class, 'order'])->name('admin.order');
+Route::get('/admin/order', [AdminController::class, 'order'])->name('admin.order')->middleware('admin');
 
 Route::resource('/product', ProductController::class);
 

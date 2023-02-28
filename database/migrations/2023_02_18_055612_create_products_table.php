@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('nama_product');
             $table->string('image')->nullable();
             $table->string('spesifikasi');
-            $table->integer('harga');
-            $table->integer('kuantitas');
+            $table->bigInteger('harga');
+            $table->bigInteger('kuantitas');
             $table->timestamps();
         });
     }

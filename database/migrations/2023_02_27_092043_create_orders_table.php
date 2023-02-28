@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('product_id')->constrained('products');
             $table->integer('jumlah_order');
-            $table->integer('harga');
+            $table->bigInteger('harga');
             // jika statusnya '0' maka false, jika dia '1' maka true
             $table->enum('status', ['0', '1']);
-            $table->integer('total');
+            $table->bigInteger('total');
             $table->timestamps();
         });
     }

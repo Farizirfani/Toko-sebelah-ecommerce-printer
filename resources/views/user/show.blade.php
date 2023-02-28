@@ -21,7 +21,6 @@
                     <form action="{{ route('order.store') }}" method="POST">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $show_product->id }}">
-                    <input type="hidden" name="harga" value="{{ number_format($show_product->harga)  }}">
                     <tr>
                         <td>Jumlah Pesanan</td>
                         <td>:</td>
