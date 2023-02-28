@@ -32,7 +32,7 @@
                         </td>
                         <td>{{ $do->order->nama_product }}</td>
                         {{-- <td>{{ $do->order->spesifikasi }}</td> --}}
-                        <td>{{ $do->order->harga }}</td>
+                        <td>{{ number_format($do->order->harga) }}</td>
                         <td>{{ $do->jumlah_order }}</td>
                         <td>
                             @if($do->status == '0')
@@ -41,7 +41,7 @@
                                 <h5><span class="badge bg-primary">Konfirmasi</span></h5>
                             @endif
                         </td>
-                        <td>{{ $do->total }}</td>
+                        <td>{{ number_format($do->total) }}</td>
                     </tr>
                     @endforeach
                 </tbody>

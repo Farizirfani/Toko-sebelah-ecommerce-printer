@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\admin;
 use App\Models\product;
-use Illuminate\Http\RedirectResponse;
+use App\Models\order;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-
-use function GuzzleHttp\Promise\all;
 
 class AdminController extends Controller
 {
@@ -34,21 +31,6 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // $input = $request->all();
-        // $store_product = product::create($input);
-
-        // if($request->hasFile('image')){
-        //     $request->file('image')->store('public/image/', $request->file('image')->getClientOriginalName());
-        //     $store_product->image = $request->file('image')->getClientOriginalName();
-        //     $store_product->save();
-        // }
-
-        // if($store_product->save()){
-        //     return redirect()->route('admin.index');
-        // }else{
-        //     return redirect()->back();
-        // }
-
         $store_product = product::create($request->all());
         if($request->hasFile('image')){
             $request->file('image')->move('image/', $request->file('image')->getClientOriginalName());
@@ -59,12 +41,14 @@ class AdminController extends Controller
         return redirect()->route('admin.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(admin $admin)
+    // public function orderList()
+    // {
+        
+    // }
+
+    public function show()
     {
-        //
+        return view('admin.orderAdmin');
     }
 
     /**
@@ -90,5 +74,10 @@ class AdminController extends Controller
     {
         product::destroy($id);
         return redirect()->route('admin.index');
+    }
+
+    public function order()
+    {
+        return view('admin.orderAdmin');
     }
 }

@@ -226,7 +226,7 @@
             </a>
             </li>
             <li>
-            <a href="#">
+            <a href="{{ route('admin.order')}}">
                 <i class='bx bx-list-ul' ></i>
                 <span class="links_name">Order list</span>
             </a>
@@ -254,7 +254,7 @@
     </section>
 
 
-      <script>
+    <script>
     let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".sidebarBtn");
     sidebarBtn.onclick = function() {

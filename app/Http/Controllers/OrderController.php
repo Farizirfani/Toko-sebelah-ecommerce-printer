@@ -17,6 +17,9 @@ class OrderController extends Controller
     {
         $data_order = order::all();
         return view('user.order', compact('data_order') );
+
+        // $data_order = order::where('user_id', '=', Auth::user()->id);
+        // return view('user.order', compact('data_order') );
     }
 
     /**
