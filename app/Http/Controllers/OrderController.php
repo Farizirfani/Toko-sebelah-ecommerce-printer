@@ -15,11 +15,8 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data_order = order::all();
+        $data_order = order::where('user_id', '=', Auth::user()->id)->get();
         return view('user.order', compact('data_order') );
-
-        // $data_order = order::where('user_id', '=', Auth::user()->id);
-        // return view('user.order', compact('data_order') );
     }
 
     /**
