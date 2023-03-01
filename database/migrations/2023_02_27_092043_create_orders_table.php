@@ -17,7 +17,6 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained('products');
             $table->integer('jumlah_order');
             $table->bigInteger('harga');
-            // jika statusnya '0' maka false, jika dia '1' maka true
             $table->enum('status', ['0', '1']);
             $table->bigInteger('total');
             $table->timestamps();

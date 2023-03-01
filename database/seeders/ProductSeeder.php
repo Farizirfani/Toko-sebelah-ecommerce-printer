@@ -15,17 +15,10 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                "nama_product" => "cihuyyPrinter",
-                "image" => "",
+                "nama_product" => "Printer-test",
+                "image" => "canon.jpg",
                 "spesifikasi" => "iniprinter",
-                "harga" => "5000000000",
-                "kuantitas" => "2",
-            ],
-            [
-                "nama_product" => "cihuyyPrinter",
-                "image" => "foto.jpg",
-                "spesifikasi" => "iniprinter",
-                "harga" => "5000000000",
+                "harga" => "3500000",
                 "kuantitas" => "2",
             ],
         ]);
