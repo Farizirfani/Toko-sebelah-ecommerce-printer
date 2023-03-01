@@ -28,7 +28,7 @@
                     <tr class="text-center justify-content-center" style="height: 150px;">
                         <th>{{ $no++ }}</th>
                         <td>
-                            <img style="max-width: 100px" src="{{ asset('image/'.$do->order->image) }}" alt="Foto Product">
+                            <img style="max-width: 100px" src="{{ asset('images/'.$do->order->image) }}" alt="Foto Product">
                         </td>
                         <td>{{ $do->order->nama_product }}</td>
                         {{-- <td>{{ $do->order->spesifikasi }}</td> --}}

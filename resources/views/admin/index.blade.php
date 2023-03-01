@@ -28,7 +28,7 @@
                         <th class="text-center">{{ $no++ }}</th>
                         <td class="text-center">{{ $dp->nama_product }}</td>
                         <td class="text-center">
-                            <img style="max-width: 80px" src="{{ asset('image/'.$dp->image) }}" alt="Foto Product">
+                            <img style="max-width: 80px" src="{{ asset('images/'.$dp->image) }}" alt="Foto Product">
                         </td>
                         <td class="text-center">{{ $dp->spesifikasi }}</td>
                         <td class="text-center">{{ $dp->harga }}</td>
@@ -36,7 +36,7 @@
                         <td class="tex-center">
                             <div class="d-flex justify-content-center">
                                 <form action="" class="m-1">
-                                    <a class="btn btn-warning" href="">Edit</a>
+                                    <a href="{{ route('admin.edit', $dp->id) }}" class="btn btn-warning" href="">Edit</a>
                                 </form>
                                 <form action="{{ route('admin.destroy', $dp->id) }}" method="POST" class="m-1">
                                     @method('delete')

@@ -132,11 +132,11 @@
     }
     nav .sidebar-button i{
         font-size: 35px;
-        margin-right: 10px;
+        margin-right: 0px;
     }
     .home-section nav .search-box{
         position: relative;
-        height: 50px;
+        height: 40px;
         max-width: 550px;
         width: 100%;
         margin: 0 20px;
@@ -153,17 +153,17 @@
     }
     nav .search-box .bx-search{
         position: absolute;
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
         background: #2697FF;
-        right: 5px;
+        right: 10px;
         top: 50%;
         transform: translateY(-50%);
         border-radius: 25px;
-        line-height: 40px;
+        line-height: 30px;
         text-align: center;
         color: #fff;
-        font-size: 22px;
+        font-size: 18px;
         transition: all 0.4 ease;
     }
     .home-section nav .profile-details{

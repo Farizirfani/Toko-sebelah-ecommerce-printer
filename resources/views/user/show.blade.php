@@ -9,7 +9,7 @@
         <div class="card-1 p-3">
             <div class="row">
                 <div class="col">
-                    <img style="max-width: 350px" src="{{ asset('image/'.$show_product->image) }}" alt="Foto Product">
+                    <img style="max-width: 350px" src="{{ asset('images/'.$show_product->image) }}" alt="Foto Product">
                 </div>  
                 <div class="col mt-4 mb-2">
                     <h1>{{ $show_product->nama_product }}</h1>

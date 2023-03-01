@@ -23,7 +23,7 @@
     <div class="row justify-content-around">
         @foreach ($data_product as $dp)
             <div class="card-1 p-3 m-3" style="width: 18rem;">
-                <img class="mb-3 mt-1" style="max-width: 150px; display: block; margin-left: auto; margin-right: auto;" src="{{ asset('image/'.$dp->image) }}" alt="Foto Product">          
+                <img class="mb-3 mt-1" style="max-width: 150px; display: block; margin-left: auto; margin-right: auto;" src="{{ asset('images/'.$dp->image) }}" alt="Foto Product">          
                 <div class="card-body">
                     <h3 class="m">{{ $dp->nama_product }}</h3>
                     <h5 class="card-text mb-2">{{ $dp->spesifikasi }}</h5>
