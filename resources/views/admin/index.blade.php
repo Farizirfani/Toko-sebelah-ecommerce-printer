@@ -31,7 +31,7 @@
                             <img style="max-width: 80px" src="{{ asset('images/'.$dp->image) }}" alt="Foto Product">
                         </td>
                         <td class="text-center">{{ $dp->spesifikasi }}</td>
-                        <td class="text-center">{{ $dp->harga }}</td>
+                        <td class="text-center">Rp. {{ number_format($dp->harga) }}</td>
                         <td class="text-center">{{ $dp->kuantitas }}</td>
                         <td class="tex-center">
                             <div class="d-flex justify-content-center">

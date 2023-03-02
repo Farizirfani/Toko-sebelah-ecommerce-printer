@@ -27,7 +27,7 @@
                 <div class="card-body">
                     <h3 class="m">{{ $dp->nama_product }}</h3>
                     <h5 class="card-text mb-2">{{ $dp->spesifikasi }}</h5>
-                    <h6 class="card-text">{{ number_format($dp->harga) }}</h6>
+                    <h6 class="card-text">Rp. {{ number_format($dp->harga) }}</h6>
                     <a href="{{ route('product.show' , $dp->id) }}" class="btn btn-primary">Beli</a>
                 </div>
             </div>

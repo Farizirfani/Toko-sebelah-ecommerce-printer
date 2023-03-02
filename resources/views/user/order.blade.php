@@ -32,20 +32,39 @@
                         </td>
                         <td>{{ $do->order->nama_product }}</td>
                         {{-- <td>{{ $do->order->spesifikasi }}</td> --}}
-                        <td>{{ number_format($do->order->harga) }}</td>
+                        <td>Rp. {{ number_format($do->order->harga) }}</td>
                         <td>{{ $do->jumlah_order }}</td>
                         <td>
-                            @if($do->status == '0')
+                            @if($do->status == 'proses')
                                 <h5><span class="badge bg-secondary w-10">Menunggu Konfirmasi</span></h5>
+                                @elseif($do->status == 'cancel')
+                                <h5><span class="badge bg-danger w-10">cancel</span></h5>
                             @else
                                 <h5><span class="badge bg-primary">Konfirmasi</span></h5>
                             @endif
                         </td>
-                        <td>{{ number_format($do->total) }}</td>
+                        <td>Rp. {{ number_format($do->total) }}</td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
+            <div class="text-end" style="margin-right:30px">
+                @if ( $do->status == 'proses')
+                    <button type="button" class="btn btn-secondary" disabled>Check Out</button>
+                    {{-- @elseif( $do->status == 'cancel')
+                    <button type="button" class="btn btn-secondary" disabled>Check Out</button> --}}
+                    @else
+                    <form action="{{ route('order.store') }}" method="post">
+                        <button type="button" class="btn btn-primary">Check Out</button>
+                    </form>
+                @endif
+
+                {{-- @if ( $do->status == 'konfirmasi')
+                    <button type="button" class="btn btn-primary">Check Out</button>
+                @else
+                    <button type="button" class="btn btn-secondary" disabled>Check Out</button>
+                @endif --}}
+            </div>
     </div>
 </div>
 @endsection

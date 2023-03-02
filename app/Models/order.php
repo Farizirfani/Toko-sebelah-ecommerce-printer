@@ -13,6 +13,6 @@ class order extends Model
 
     public function order()
     {
-        return $this->belongsTo(product::class, 'product_id', 'id');
+        return $this->belongsTo(product::class, 'product_id', 'id', 'user_id');
     }
 }

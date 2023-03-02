@@ -20,6 +20,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // route admin
 Route::resource('/admin', AdminController::class)->middleware('admin');
 Route::get('/adminOrder', AdminController::class . '@order')->name('admin.order')->middleware('admin');
+Route::put('/adminOrder', AdminController::class . '@updateStatus')->name('admin.updateStatus')->middleware('admin');
 
 Route::resource('/product', ProductController::class);
 

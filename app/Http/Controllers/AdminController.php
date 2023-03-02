@@ -93,4 +93,12 @@ class AdminController extends Controller
         $data_order = Order::all();
         return view('admin.orderAdmin', compact('data_order'));
     }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $product->update($request->all());
+
+        return redirect()->route('admin.orderAdmin');
+    }
 }

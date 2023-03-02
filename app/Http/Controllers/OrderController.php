@@ -48,7 +48,7 @@ class OrderController extends Controller
         $order->user_id = Auth::user()->id;
         $order->jumlah_order = $request->input('jumlah_order');
         $order->harga = $harga;
-        $order->status = '0';
+        $order->status = 'proses';
         $order->total = $harga * $request->jumlah_order;
 
         $order->save();
@@ -75,9 +75,12 @@ class OrderController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, order $order)
+    public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        $product->update($request->all());
+
+        return redirect()->route('admin.orderAdmin');
     }
 
     /**

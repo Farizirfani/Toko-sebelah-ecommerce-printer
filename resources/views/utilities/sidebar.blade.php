@@ -220,7 +220,7 @@
             </a>
             </li>
             <li>
-            <a href="{{ url('/admin/create') }}">
+            <a href="{{ route('admin.create') }}">
                 <i class='bx bx-box' ></i>
                 <span class="links_name">Create Product</span>
             </a>
