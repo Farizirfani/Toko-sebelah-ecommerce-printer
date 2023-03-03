@@ -49,21 +49,21 @@
                 </tbody>
             </table>
             <div class="text-end" style="margin-right:30px">
-                @if ( $do->status == 'proses')
+                {{-- @if ( $do->status == 'proses')
                     <button type="button" class="btn btn-secondary" disabled>Check Out</button>
-                    {{-- @elseif( $do->status == 'cancel')
-                    <button type="button" class="btn btn-secondary" disabled>Check Out</button> --}}
+                    @elseif( $do->status == 'cancel')
+                    <button type="button" class="btn btn-secondary" disabled>Check Out</button>
                     @else
                     <form action="{{ route('order.store') }}" method="post">
                         <button type="button" class="btn btn-primary">Check Out</button>
                     </form>
-                @endif
+                @endif --}}
 
-                {{-- @if ( $do->status == 'konfirmasi')
+                @if ( $do->status == 'konfirmasi')
                     <button type="button" class="btn btn-primary">Check Out</button>
                 @else
                     <button type="button" class="btn btn-secondary" disabled>Check Out</button>
-                @endif --}}
+                @endif
             </div>
     </div>
 </div>

@@ -13,8 +13,9 @@
                         <th>Pembeli</th>
                         <th>Nama Product</th>
                         <th>Image</th>
+                        <th>jumlah orderan</th>
                         <th>harga</th>
-                        <th>kuantitas</th>
+                        <th>total</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -30,39 +31,26 @@
                         <td class="text-center">
                             <img style="max-width: 80px" src="{{ asset('images/'.$do->order->image) }}" alt="Foto Product">
                         </td>
+                        <td class="text-center">{{ $do->jumlah_order }}</td>
                         <td class="text-center">Rp. {{ number_format($do->harga) }}</td>
-                        <td class="text-center">{{ $do->order->kuantitas }}</td>
+                        <td class="text-center">Rp. {{ number_format($do->total) }}</td>
                         <td class="tex-center">
                             <div class="d-flex justify-content-center">
-                                {{-- <form action="{{ route('admin.orderStatus') }}" method="POST" class="m-1">
-                                    @method('PUT')
+                                <form method="POST" action="{{ route('order.update', $do->id) }}" enctype="multipart/form-data">
                                     @csrf
-                                    <select class="form-select" aria-label="Default select example" name="status">
-                                        <option selected value="{{ $do->status }}">{{ $do->status }}</option>
-                                        <option value="konfirmasi">Konfirmasi</option>
-                                        <option value="cancel">cancel</option>
-                                    </select>
-
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </form> --}}
-
-
-
-            <form method="POST" action="{{ route('admin.update', $do->id) }}" enctype="multipart/form-data">
-                @csrf
-                @method("PUT")
-                <select name="status" class="form-select" aria-label="Default select example" >
-                    <option selected value="{{ $do->status }}">{{ $do->status }}</option>
-                    <option value="konfirmasi">Konfirmasi</option>
-                    <option value="cancel">cancel</option>
-                </select>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-
-
-
-
+                                    @method("PUT")
+                                    <div class="d-flex justify-content-center">
+                                        <select name="status" class="form-select w-50" aria-label="Default select example" >
+                                            <option selected value="{{ $do->status }}">{{ $do->status }}</option>
+                                            <option value="proses">Proses</option>
+                                            <option value="konfirmasi">Konfirmasi</option>
+                                            <option value="cancel">cancel</option>
+                                        </select>
+                                        <div style="margin-left: 5px;">
+                                            <button type="submit" class="btn btn-success">change</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </td>
                     </tr>

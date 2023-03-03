@@ -15,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $data_order = order::where('user_id', '=', Auth::user()->id)->get();
+        $data_order = Order::where('user_id', '=', Auth::user()->id)->get();
         return view('user.order', compact('data_order') );
     }
 
@@ -59,7 +59,7 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(order $order)
+    public function show()
     {
         //
     }
@@ -67,7 +67,7 @@ class OrderController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(order $order)
+    public function edit()
     {
         //
     }
@@ -77,17 +77,19 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $product = Product::find($id);
+        // $product = Order::find($id);
+        $product = Order::find($id);
         $product->update($request->all());
 
-        return redirect()->route('admin.orderAdmin');
+        return redirect('/adminOrder');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(order $order)
+    public function destroy($id)
     {
-        //
+        product::destroy($id);
+        return redirect()->route('user.order');
     }
 }
