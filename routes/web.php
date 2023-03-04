@@ -6,8 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-
-
+use App\Http\Controllers\TransaksiController;
 
 Route::get('/', function () {
     return view('auth.login');
@@ -25,4 +24,6 @@ Route::put('/adminOrder', AdminController::class . '@updateStatus')->name('admin
 Route::resource('/product', ProductController::class);
 
 Route::resource('/order', OrderController::class);
+
+Route::resource('/transaksi', TransaksiController::class);
 
