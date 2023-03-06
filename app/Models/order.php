@@ -15,4 +15,9 @@ class order extends Model
     {
         return $this->belongsTo(product::class, 'product_id', 'id', 'user_id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

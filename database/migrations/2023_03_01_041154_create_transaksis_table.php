@@ -16,6 +16,10 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained('orders');
             $table->foreignId('user_id')->constrained('users');
             $table->string('no_pesanan');
+            $table->string('nama');
+            $table->string('payment');
+            $table->string('alamat');
+            // $table->bigInteger('bayar');
             $table->timestamps();
         });
     }

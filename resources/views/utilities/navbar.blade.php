@@ -23,8 +23,8 @@
                         <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="{{ url('/order') }}">
                             Order
                         </a>
-                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="#">
-                            about
+                        <a style="text-decoration: none; font-weight: 200" class="color-4 m-1" href="{{ url('/pesanan')}}">
+                            Transaksi
                         </a>
                         @if (Auth()->user()->role == 'admin')
                             <a style="text-decoration: none; font-weight: 200; background-color: #160749; border-radius: 25px; " class="color-4 px-3 py-1 mx-2" href="{{ url('/admin') }}">

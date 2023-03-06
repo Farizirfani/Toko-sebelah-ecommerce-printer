@@ -10,8 +10,8 @@ class transaksi extends Model
     use HasFactory;
 
     protected $guarded = [''];
-    public function Transaksi()
+    public function Order()
     {
-        return $this->belongsTo(product::class, 'order_id ', 'id');
+        return $this->belongsTo(order::class, 'order_id ', 'id');
     }
 }

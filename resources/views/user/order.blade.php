@@ -77,17 +77,17 @@
                                 Status Pemesanan : <span class="badge bg-primary">Konfirmasi</span>
                             @endif
                     </h5>
-                    <form action="{{ route('transaksi.store') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="order_id" value="{{ $do->id }}">
+                    {{-- <form action="{{ route('transaksi.') }}" method="POST">
+                        @csrf --}}
                         <div class="text-start">
                             @if ( $do->status == 'konfirmasi')
-                                <button type="submit" class="btn btn-primary">Check Out</button>
+                                {{-- <button type="submit" class="btn btn-primary">Check Out</button> --}}
+                                <a href="{{ route('transaksi.show' , $do->id) }}" class="btn btn-primary">Check Out</a>
                             @else
                                 <button type="button" class="btn btn-secondary" disabled>Check Out</button>
                             @endif
                         </div>
-                    </form>
+                    {{-- </form> --}}
                 </div>
             </div>
         @endforeach

@@ -15,7 +15,7 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('user.transaksi');
+        //
     }
 
     /**
@@ -31,11 +31,7 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-
-        $data_order = Order::where('user_id', '=', Auth::user()->id)->get();
-        $order = order::all();
-
-        dd($data_order);
+        // $data_order = Order::where('user_id', '=', Auth::user()->id)->get();
 
         $noPesanan = substr(uniqid(), 0, 10);
         $transaksi = new Transaksi();
@@ -43,19 +39,24 @@ class TransaksiController extends Controller
         $transaksi->user_id = Auth::user()->id;
         $transaksi->no_pesanan = $noPesanan;
         $transaksi->alamat = $request->input('alamat');
-        $transaksi->pembayaran = $request->input('pembayaran') - 
+        $transaksi->nama = $request->input('nama');
+        $transaksi->payment = $request->input('payment');
+        // $transaksi->bayar = $request->input('bayar');
 
+        // dd($transaksi);
         $transaksi->save();
 
-        return redirect('/home');
+        return redirect('/home')->with('transaksi', 'transaksi berhasil, barang segera dikirim');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(transaksi $transaksi)
+    public function show($id)
     {
-        //
+        $data_transaksi = transaksi::all();
+        $data_order = order::find($id);
+        return view('user.transaksi', compact('data_order', 'data_transaksi'));
     }
 
     /**
