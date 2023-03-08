@@ -7,6 +7,19 @@
     <div class="container">
         <div class="card-1 p-3 m-4">
             <table class="table table-hover">
+                @if ($message = Session::get('success'))
+            <div class="alert alert-success m-3" role="alert">
+                {{ $message }}
+            </div>
+        @elseif ($message = Session::get('delete'))
+            <div class="alert alert-danger m-3" role="alert">
+                {{ $message }}
+            </div>
+        @elseif ($message = Session::get('update'))
+            <div class="alert alert-info m-3" role="alert">
+                {{ $message }}
+            </div>
+        @endif
                 <thead>
                     <tr class="text-center">
                         <th>#</th>

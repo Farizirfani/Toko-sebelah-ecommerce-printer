@@ -16,7 +16,6 @@
                     <h3>Spesifikasi : {{ $show_product->spesifikasi }}</h3>
                     <h3>Harga : Rp. {{ $show_product->harga }}</h3>
                     <h3>kuantitas : {{ $show_product->kuantitas }}</h3>
-                    {{-- form --}}
 
                     <form action="{{ route('order.store') }}" method="POST">
                     @csrf
@@ -28,6 +27,11 @@
                             <input type="number" min="1" name="jumlah_order" class="form-control qty-input text-center">
                         </div>
                     </tr>
+                    @if ($message = Session::get('error'))
+                        <div class="alert alert-danger w-75 p-2" role="alert">
+                            <h5 class="text-center">{{ $message }}</h5>
+                        </div>
+                    @endif
                     <tr>
                         <td>
                             <button type="submit" class="mt-2 btn btn-primary">Order</button>

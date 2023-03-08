@@ -44,7 +44,7 @@ class AdminController extends Controller
         $product->image = $imageName;
         $product->save();
 
-        return redirect()->route('admin.index')->with('success', 'Product created successfully!');
+        return redirect()->route('admin.index')->with('success', 'Product Berhasil Ditambahkan');
     }
 
     public function show($id)
@@ -78,14 +78,14 @@ class AdminController extends Controller
         $product->kuantitas = $request->kuantitas;
         $product->save();
 
-        return redirect('/admin')->with('success', 'Product updated successfully!');
+        return redirect('/admin')->with('update', 'Product Berhasil diupdate');
     }
 
 
     public function destroy($id)
     {
         product::destroy($id);
-        return redirect()->route('admin.index');
+        return redirect()->route('admin.index')->with('delete', 'Product Berhasil Dihapus');
     }
 
     public function order()
@@ -99,6 +99,6 @@ class AdminController extends Controller
         $product = Product::find($id);
         $product->update($request->all());
 
-        return redirect()->route('admin.orderAdmin');
+        return redirect()->route('admin.orderAdmin')->with('success', 'Status telah diubah');
     }
 }

@@ -5,16 +5,16 @@
 {{-- content --}}
 @section('content-admin')
     <div class="container">
-        @if ($message = Session::get('succes'))
-            <div class="alert alert-success" role="alert">
+        @if ($message = Session::get('success'))
+            <div class="alert alert-success m-3" role="alert">
                 {{ $message }}
             </div>
         @elseif ($message = Session::get('delete'))
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger m-3" role="alert">
                 {{ $message }}
             </div>
         @elseif ($message = Session::get('update'))
-            <div class="alert alert-info" role="alert">
+            <div class="alert alert-info m-3" role="alert">
                 {{ $message }}
             </div>
         @endif

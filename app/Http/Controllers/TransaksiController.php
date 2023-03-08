@@ -57,21 +57,6 @@ class TransaksiController extends Controller
             return redirect()->back();
         }
         
-
-        // $noPesanan = substr(uniqid(), 0, 10);
-        // $transaksi = new Transaksi();
-        // $transaksi->order_id = $request->order_id;
-        // $transaksi->user_id = Auth::user()->id;
-        // $transaksi->no_pesanan = $noPesanan;
-        // $transaksi->alamat = $request->input('alamat');
-        // $transaksi->nama = $request->input('nama');
-        // $transaksi->payment = $request->input('payment');
-        // $transaksi->bayar = $request->input('bayar');
-        
-
-        // dd($transaksi);
-        // $transaksi->save();
-
         return redirect('/home')->with('transaksi', 'transaksi berhasil, barang segera dikirim');
     }
 
