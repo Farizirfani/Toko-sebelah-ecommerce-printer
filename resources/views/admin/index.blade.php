@@ -5,6 +5,19 @@
 {{-- content --}}
 @section('content-admin')
     <div class="container">
+        @if ($message = Session::get('succes'))
+            <div class="alert alert-success" role="alert">
+                {{ $message }}
+            </div>
+        @elseif ($message = Session::get('delete'))
+            <div class="alert alert-danger" role="alert">
+                {{ $message }}
+            </div>
+        @elseif ($message = Session::get('update'))
+            <div class="alert alert-info" role="alert">
+                {{ $message }}
+            </div>
+        @endif
         <div class="card-1 m-4 p-3">
             <h3 class="text-center">Product</h3>
             <table class="table table-hover">

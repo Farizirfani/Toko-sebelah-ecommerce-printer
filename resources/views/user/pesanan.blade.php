@@ -14,6 +14,7 @@
                         <th>Nama Pemesan</th>
                         <th>Nomer Pesanan</th>
                         <th>Alamat Pemesan</th>
+                        <th>Biaya Pembayaran</th>
                         <th>payment</th>
                     </tr>
                 </thead>
@@ -27,6 +28,7 @@
                         <td>{{ $dt->nama }}</td>
                         <td>{{ $dt->no_pesanan }}</td>
                         <td>{{ $dt->alamat }}</td>
+                        <td>{{ number_format($dt->uang_bayar) }}</td>
                         <td>{{ $dt->payment }}</td>
                     </tr>
                     @endforeach

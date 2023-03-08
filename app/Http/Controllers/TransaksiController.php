@@ -31,20 +31,46 @@ class TransaksiController extends Controller
      */
     public function store(Request $request)
     {
-        // $data_order = Order::where('user_id', '=', Auth::user()->id)->get();
 
-        $noPesanan = substr(uniqid(), 0, 10);
-        $transaksi = new Transaksi();
-        $transaksi->order_id = $request->order_id;
-        $transaksi->user_id = Auth::user()->id;
-        $transaksi->no_pesanan = $noPesanan;
-        $transaksi->alamat = $request->input('alamat');
-        $transaksi->nama = $request->input('nama');
-        $transaksi->payment = $request->input('payment');
+        $order_id = $request->order_id;
+        $order = Order::where('id', $order_id)->first();
+
+        $total_harga = $order->total;
+        $uang_bayar = $request->input('uang_bayar');
+
+        if ( $uang_bayar >=  $total_harga) {
+            $noPesanan = substr(uniqid(), 0, 10);
+            $transaksi = new Transaksi();
+            $transaksi->user_id = Auth::user()->id;
+            $transaksi->no_pesanan = $noPesanan;
+            $transaksi->uang_bayar = $uang_bayar;
+            $transaksi->alamat = $request->input('alamat');
+            $transaksi->nama = $request->input('nama');
+            $transaksi->payment = $request->input('payment');
+
+            $order->delete();
+
+            $transaksi->save();
+
+            return redirect('/home');
+        }else{
+            return redirect()->back();
+        }
+        
+
+        // $noPesanan = substr(uniqid(), 0, 10);
+        // $transaksi = new Transaksi();
+        // $transaksi->order_id = $request->order_id;
+        // $transaksi->user_id = Auth::user()->id;
+        // $transaksi->no_pesanan = $noPesanan;
+        // $transaksi->alamat = $request->input('alamat');
+        // $transaksi->nama = $request->input('nama');
+        // $transaksi->payment = $request->input('payment');
         // $transaksi->bayar = $request->input('bayar');
+        
 
         // dd($transaksi);
-        $transaksi->save();
+        // $transaksi->save();
 
         return redirect('/home')->with('transaksi', 'transaksi berhasil, barang segera dikirim');
     }

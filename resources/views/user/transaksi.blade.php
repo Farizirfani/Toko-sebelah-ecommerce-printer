@@ -13,6 +13,10 @@
                 <input type="hidden"  name="order_id" value="{{ $data_order->id }}">
                 <input type="hidden"  name="nama" value="{{ $data_order->user->name }}">
                 <div class="w-75 m-auto justify-content-center text-center">
+                    <label for="alamat" class="form-label text-start">Pembayaran</label>
+                    <input type="text" name="uang_bayar" class="form-control">
+                </div>
+                <div class="w-75 m-auto justify-content-center text-center">
                     <label for="alamat" class="form-label text-start">Alamat</label>
                     <input type="text" name="alamat" class="form-control">
                 </div>
